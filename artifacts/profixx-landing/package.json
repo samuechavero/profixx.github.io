@@ -2,7 +2,7 @@
   "name": "@workspace/profixx-landing",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://samuechavero.github.io/profixx/",
+  "homepage": "https://samuechavero.github.io/profixx.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
