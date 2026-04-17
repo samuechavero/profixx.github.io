@@ -163,12 +163,11 @@ export default function Home() {
   ];
 
   const portfolioImages = [
-    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80", // Replace with actual project photos
-    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80", // Replace with actual project photos
-    "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80", // Replace with actual project photos
-    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", // Replace with actual project photos
-    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80", // Replace with actual project photos
-    "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80", // Replace with actual project photos
+    "WhatsApp Image 2026-04-16 at 21.52.05.jpeg",
+    "WhatsApp Image 2026-04-16 at 21.53.32.jpeg",
+    "WhatsApp Image 2026-04-16 at 21.52.08.jpeg",
+    "WhatsApp Image 2026-04-16 at 21.52.03.jpeg",
+    "WhatsApp Image 2026-04-16 at 21.53.35.jpeg",
   ];
 
   return (
@@ -208,8 +207,8 @@ export default function Home() {
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 flex items-center justify-center min-h-[90vh]">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80" 
-            alt="Construction background" 
+            src="houston-skyline-custom.jpg" 
+            alt="Houston Skyline background" 
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-primary/90 bg-gradient-to-t from-primary/95 to-primary/80"></div>
@@ -333,21 +332,24 @@ export default function Home() {
             <p className="text-muted-foreground text-lg">{c.portfolioSub}</p>
           </div>
 
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              {portfolioImages.map((src, idx) => (
-                <div key={idx} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0 pl-4">
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden group">
-                    <img 
-                      src={src} 
-                      alt={`Portfolio item ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolioImages.map((src, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="relative aspect-[4/3] rounded-xl overflow-hidden group shadow-lg"
+              >
+                <img 
+                  src={src} 
+                  alt={`Portfolio item ${idx + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300"></div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
