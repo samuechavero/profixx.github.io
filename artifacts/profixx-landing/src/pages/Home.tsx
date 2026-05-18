@@ -25,6 +25,7 @@ import {
   Star
 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import { Reviews } from "@/components/Reviews";
 
 // --- TRANSLATIONS ---
 const t = {
@@ -250,6 +251,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* REVIEWS SECTION */}
+      <Reviews lang={lang} />
 
       {/* SERVICES SECTION */}
       <section id="services" className="py-24 bg-muted/30">
